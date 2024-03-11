@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dual-job-date-web
+  namespace: msd21-dual-dating-test
   labels:
     app: dual-job-date
 spec:
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dual-job-date-web
-          image: ghcr.io/FH-JOANNEUM-MSD/dual-job-date-web:latest
+          image: ghcr.io/fh-joanneum-msd/dual-job-date-web:latest
           ports:
             - containerPort: 80
           imagePullPolicy: IfNotPresent
