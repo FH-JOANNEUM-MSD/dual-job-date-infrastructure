@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dual-job-date-api
+  labels:
+    app: dual-job-date-api
+    service: dual-job-date-api
+spec:
+  selector:
+    app: dual-job-date-api
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer

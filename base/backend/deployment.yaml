@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dual-job-date-api
+  labels:
+    app: dual-job-date-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dual-job-date-api
+  template:
+    metadata:
+      labels:
+        app: dual-job-date-api
+    spec:
+      containers:
+        - name: dual-job-date-api
+          image: ghcr.io/FH-JOANNEUM-MSD/dual-job-date-api:latest
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: IfNotPresent
