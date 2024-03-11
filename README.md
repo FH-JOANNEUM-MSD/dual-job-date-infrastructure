@@ -8,19 +8,19 @@ This project contains the infrastructure code for the dual job date project. The
 .
 ├── base
 │   ├── backend
-│   │   ├── deployment.yaml
-│   │   └── service.yaml
+│   │   ├── deployment.yaml //dual job date api deployment
+│   │   └── service.yaml //dual job date api service
 │   │── frontend
-│   │   ├── kustomization.yaml
-│   │   └── deployment.yaml
-│   └── kustomization.yaml
+│   │   ├── deployment.yaml //dual job date web deployment
+│   │   └── service.yaml //dual job date web service
+│   └── kustomization.yaml //kustomization file for base environment
 └── overlays
     ├── development
-    │   └── kustomization.yaml
+    │   └── kustomization.yaml //kustomization file for development environment
     ├── integration
-    │   └── kustomization.yaml
+    │   └── kustomization.yaml //kustomization file for integration environment
     └── production
-        └── kustomization.yaml
+        └── kustomization.yaml //kustomization file for production environment
 
 
 ```
