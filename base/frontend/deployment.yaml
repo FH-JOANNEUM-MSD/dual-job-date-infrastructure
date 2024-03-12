@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
         - name: dual-job-date-web
-          image: ghcr.io/fh-joanneum-msd/dual-job-date-web:latest
+          image: ghcr.io/fh-joanneum-msd/dual-job-date-web:build-develop
           ports:
             - containerPort: 80
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
       imagePullSecrets:
         - name: ghcr-credentials
