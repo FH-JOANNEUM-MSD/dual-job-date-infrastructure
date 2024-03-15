@@ -18,6 +18,8 @@ This project contains the infrastructure code for the dual job date project. The
     ├── development
     │   └── kustomization.yaml //kustomization file for development environment
     ├── integration
+    │   ├── frontend
+    │   │       └── ingress.yaml //ingress file for integration environment
     │   └── kustomization.yaml //kustomization file for integration environment
     └── production
         └── kustomization.yaml //kustomization file for production environment
@@ -27,5 +29,15 @@ This project contains the infrastructure code for the dual job date project. The
 
 ## Prerequisites
 
-- [Docker](https://www.docker.com/)
 - [Kubernetes](https://kubernetes.io/)
+
+## Getting Started
+
+1. Clone the repository
+2. Change directory to the repository
+3. Login to the kubernetes cluster and change to the correct namespace
+4. Run the following command to deploy the infrastructure to the kubernetes staging cluster
+
+```bash
+kubectl apply -k overlays/integration
+```
