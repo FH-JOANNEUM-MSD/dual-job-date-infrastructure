@@ -18,6 +18,13 @@ spec:
       containers:
         - name: dual-job-date-web
           image: ghcr.io/fh-joanneum-msd/dual-job-date-web:build-develop
+          resources:
+            limits:
+              cpu: 256m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
           ports:
             - containerPort: 80
           imagePullPolicy: Always
