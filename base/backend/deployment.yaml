@@ -30,3 +30,5 @@ spec:
           imagePullPolicy: Always
       imagePullSecrets:
         - name: ghcr-credentials
+  strategy:
+    type: Recreate
