@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: dual-job-date-db-claim
+  name: dual-job-date-db-pvc
   namespace: msd21-dual-dating-test
   labels:
     app: dual-job-date-db
@@ -11,3 +11,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  storageClassName: nfs

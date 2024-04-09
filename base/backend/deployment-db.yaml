@@ -22,7 +22,7 @@ spec:
             - containerPort: 3306
           resources:
             limits:
-              cpu: 1
+              cpu: '1'
               memory: 1Gi
             requests:
               cpu: 500m
@@ -39,11 +39,13 @@ spec:
           imagePullPolicy: Always
           volumeMounts:
             - mountPath: /var/lib/mysql
-              name: dual-job-date-db-claim
+              name: dual-job-date-db-pvc
       volumes:
-        - name: dual-job-date-db-claim
+        - name: dual-job-date-db-pvc
           persistentVolumeClaim:
-            claimName: dual-job-date-db-claim
+            claimName: dual-job-date-db-pvc
       imagePullSecrets:
         - name: ghcr-credentials
+  strategy:
+    type: Recreate
 
