@@ -9,6 +9,9 @@ This project contains the infrastructure code for the dual job date project. The
 ├── base
 │   ├── backend
 │   │   ├── deployment.yaml //dual job date api deployment
+│   │   ├── deployment-db.yaml //dual job date database deployment
+│   │   ├── persistant-volume-claim-db.yaml //dual job date pvc for database deployment
+│   │   ├── service-db.yaml //dual job date db service
 │   │   └── service.yaml //dual job date api service
 │   │── frontend
 │   │   ├── deployment.yaml //dual job date web deployment
@@ -20,10 +23,16 @@ This project contains the infrastructure code for the dual job date project. The
     ├── integration
     │   ├── frontend
     │   │       └── ingress.yaml //ingress file for integration environment
+    │   ├── backend
+    │   │       └── ingress.yaml //ingress file for integration environment
     │   └── kustomization.yaml //kustomization file for integration environment
     └── production
+        ├── frontend
+        │       └── ingress.yaml //frontend ingress file for production environment
+        ├── backend
+        │       └── ingress.yaml //backend ingress file for production environment
         └── kustomization.yaml //kustomization file for production environment
-
+        
 
 ```
 
