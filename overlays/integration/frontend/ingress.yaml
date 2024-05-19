@@ -2,9 +2,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: dual-job-date-web
+  namespace: msd21-dual-dating-test
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  ingressClassName: public
   tls:
     - hosts:
         - "dual-dating.msd-moss-test.fh-joanneum.at"
