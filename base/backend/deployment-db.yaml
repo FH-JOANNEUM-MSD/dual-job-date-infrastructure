@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dual-job-date-db
+  namespace: msd21-dual-dating-test
+  labels:
+    app: dual-job-date
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dual-job-date-db
+  template:
+    metadata:
+      labels:
+        app: dual-job-date-db
+    spec:
+      containers:
+        - name: dual-job-date-db
+          image: mysql:8.0
+          ports:
+            - containerPort: 3306
+          resources:
+            limits:
+              cpu: '1'
+              memory: 1Gi
+            requests:
+              cpu: 500m
+              memory: 512Mi
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root
+            - name: MYSQL_DATABASE
+              value: DualJobDate
+            - name: MYSQL_USER
+              value: user
+            - name: MYSQL_PASSWORD
+              value: password
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: dual-job-date-db-pvc
+      volumes:
+        - name: dual-job-date-db-pvc
+          persistentVolumeClaim:
+            claimName: dual-job-date-db-pvc
+      imagePullSecrets:
+        - name: ghcr-credentials
+  strategy:
+    type: Recreate
+

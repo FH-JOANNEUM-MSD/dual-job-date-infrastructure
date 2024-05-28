@@ -4,5 +4,8 @@ kind: Kustomization
 resources:
   - backend/deployment.yaml
   - backend/service.yaml
+  - backend/deployment-db.yaml
+  - backend/service-db.yaml
+  - backend/persistant-volume-claim-db.yaml
   - frontend/deployment.yaml
   - frontend/service.yaml
