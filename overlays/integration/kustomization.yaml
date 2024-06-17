@@ -5,3 +5,7 @@ resources:
   - ../../base
   - ./frontend/ingress.yaml
   - ./backend/ingress.yaml
+
+images:
+  - name: ghcr.io/fh-joanneum-msd/dual-job-date-web
+    newTag: build-develop

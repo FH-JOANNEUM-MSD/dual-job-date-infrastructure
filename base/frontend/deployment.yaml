@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dual-job-date-web
-          image: ghcr.io/fh-joanneum-msd/dual-job-date-web:build-develop
+          image: ghcr.io/fh-joanneum-msd/dual-job-date-web
           resources:
             limits:
               cpu: 100m
