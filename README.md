@@ -50,3 +50,7 @@ This project contains the infrastructure code for the dual job date project. The
 ```bash
 kubectl apply -k overlays/integration
 ```
+
+## Image Pull Secrets
+
+To be able to pull the images from the specific repos, you will need a token from github. This token is stored within the secret named `ghcr-credentials`. Inside this secret is a .dockerconfigjson stored. This docker config json has a token with packages:read permissions stored. Here is a [link](https://dev.to/asizikov/using-github-container-registry-with-kubernetes-38fb) on how to create the secret.
